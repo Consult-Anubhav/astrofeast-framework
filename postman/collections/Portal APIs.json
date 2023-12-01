@@ -1,0 +1,815 @@
+{
+	"info": {
+		"_postman_id": "00b201db-52a4-49f7-9a2d-2107d5dbc517",
+		"name": "Portal APIs",
+		"description": "This collection is related to portal only.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "26343523-00b201db-52a4-49f7-9a2d-2107d5dbc517"
+	},
+	"item": [
+		{
+			"name": "Super Admin",
+			"item": [
+				{
+					"name": "Staff",
+					"item": [
+						{
+							"name": "Staff List",
+							"id": "b738a510-c886-40ac-85e2-a9538b4c231f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": "XSRF-TOKEN=123{{vhost-xsrf-token}};laravel_session={{vhost-session}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{vhost-api}}/staff/get_list",
+									"host": [
+										"{{vhost-api}}"
+									],
+									"path": [
+										"staff",
+										"get_list"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "550d46e0-02d0-4551-8526-30ede2d6918f"
+				},
+				{
+					"name": "Integration",
+					"item": [
+						{
+							"name": "Create Token",
+							"id": "a23dd310-9889-444f-a4a4-610e5c83b4c3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true,
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Requested-With",
+										"value": "XMLHttpRequest",
+										"type": "text"
+									},
+									{
+										"key": "X-CSRF-TOKEN",
+										"value": "uxDz3URA1x5sBpJmfBAeWPypnrryBxsPSsXmKMYi",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{vhost-guest}}/tokens/create",
+									"host": [
+										"{{vhost-guest}}"
+									],
+									"path": [
+										"tokens",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "81c6fbc3-3b6a-4e9b-bca4-9bec4e134fa3"
+				},
+				{
+					"name": "Store",
+					"item": [],
+					"id": "688fe277-700b-4a5f-9ed2-d5bf60e24041"
+				},
+				{
+					"name": "Addresses",
+					"item": [],
+					"id": "f48ed2f0-8259-4e3d-94f3-f0dada6ba2d2"
+				},
+				{
+					"name": "Currencies",
+					"item": [],
+					"id": "722a5423-b83f-4002-954a-f494199367e8"
+				},
+				{
+					"name": "Roles",
+					"item": [],
+					"id": "c7d83f73-5664-4556-8a4d-bd82d2ea760f"
+				},
+				{
+					"name": "Taxes",
+					"item": [],
+					"id": "4c5c7faa-8fc4-40ac-a988-340139754c06"
+				},
+				{
+					"name": "Integrations",
+					"item": [],
+					"id": "95df8d29-c5be-400b-8d5a-5e562f85b434"
+				},
+				{
+					"name": "Permissions",
+					"item": [],
+					"id": "3e33db52-8b90-4313-9905-82cd5a54acd1"
+				},
+				{
+					"name": "Shippings",
+					"item": [],
+					"id": "75a980f7-e3ba-45d0-a013-fee4e4dde2d4"
+				}
+			],
+			"id": "5c66cd81-f13c-443f-a71f-2e6a1c4ed3c0",
+			"description": "For Admin Users having settings permissions."
+		},
+		{
+			"name": "Admins",
+			"item": [
+				{
+					"name": "Categories",
+					"item": [],
+					"id": "036e95e8-bc5c-4817-96f4-076ead96335b"
+				},
+				{
+					"name": "Products",
+					"item": [],
+					"id": "fe28c6eb-e8d0-40e6-882e-2792a99075b3"
+				},
+				{
+					"name": "Pricing",
+					"item": [],
+					"id": "45d6571a-162d-4d24-8b65-ed1f7a3384fa"
+				},
+				{
+					"name": "Discounts",
+					"item": [],
+					"id": "dc7fbfe1-520d-45cc-b171-7a11254e0a62"
+				},
+				{
+					"name": "Customers",
+					"item": [],
+					"id": "e5e4bd60-64d2-430f-a9d7-e01ea0ca1a67"
+				},
+				{
+					"name": "Orders",
+					"item": [],
+					"id": "bcc80bb3-1173-4e71-96d5-dfe9060b0f90"
+				},
+				{
+					"name": "Payments",
+					"item": [],
+					"id": "0286a5db-1644-4cc5-895a-798d31e11d18"
+				},
+				{
+					"name": "Notifications",
+					"item": [],
+					"id": "4be47005-5656-462d-b178-be4146062a71"
+				}
+			],
+			"id": "040a0263-e5c6-44c9-a2da-eb92d14a8621",
+			"description": "Portal Staff Users APIs"
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d6829228-0ba2-4c88-b249-141933a9c9af",
+								"exec": [
+									"let xsrf_token = pm.cookies.get('XSRF-TOKEN')\r",
+									"pm.environment.set('vhost-xsrf-token',xsrf_token)\r",
+									"let _session = pm.cookies.get('laravel_session')\r",
+									"pm.environment.set('vhost-session',_session)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "966159ba-55d9-4be5-8117-8aa8ac43e9b8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "tech@astrofeast.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Astrofeast@2023",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{vhost-guest}}/signin",
+							"host": [
+								"{{vhost-guest}}"
+							],
+							"path": [
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"id": "eb0b94cb-6f8a-48f2-81cf-e2ea16f59361",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Cookie",
+								"value": "\"\"",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "tech@astrofeast.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Astrofeast@2023",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{vhost-api}}/signout",
+							"host": [
+								"{{vhost-api}}"
+							],
+							"path": [
+								"signout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "53238ea6-32a7-46c1-9112-43e1315e5a3d"
+		},
+		{
+			"name": "Test",
+			"item": [
+				{
+					"name": "Meilisearch",
+					"item": [
+						{
+							"name": "SE-movies",
+							"id": "c16ee727-65ef-41f6-b9bb-b4081c91e097",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer 97n44r-vWJ4-L97dzI7I2RmazUfLlQiI86fYUCF2wCU",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:7700/indexes/movies/documents",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7700",
+									"path": [
+										"indexes",
+										"movies",
+										"documents"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SE-books",
+							"id": "ecd6b61a-0636-4ecb-9835-70b4303ed9f3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer 97n44r-vWJ4-L97dzI7I2RmazUfLlQiI86fYUCF2wCU",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:7700/indexes/books/documents",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7700",
+									"path": [
+										"indexes",
+										"books",
+										"documents"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SE-cities",
+							"id": "422e7924-65e2-447b-b7f2-b7a4f7ac19e2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer 97n44r-vWJ4-L97dzI7I2RmazUfLlQiI86fYUCF2wCU",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:7700/indexes/cities/documents",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7700",
+									"path": [
+										"indexes",
+										"cities",
+										"documents"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SE-games",
+							"id": "69a69d15-fd37-46d1-ae0f-4b75b5bb6db8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer 97n44r-vWJ4-L97dzI7I2RmazUfLlQiI86fYUCF2wCU",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:7700/indexes/games/documents",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7700",
+									"path": [
+										"indexes",
+										"games",
+										"documents"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SE-products",
+							"id": "17d48cd2-70c8-4039-a847-9ad220e57521",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer 97n44r-vWJ4-L97dzI7I2RmazUfLlQiI86fYUCF2wCU",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:7700/indexes/products/documents",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7700",
+									"path": [
+										"indexes",
+										"products",
+										"documents"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SE-restaurants",
+							"id": "3f875d56-ba91-449c-9fef-9b9296bac147",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer 97n44r-vWJ4-L97dzI7I2RmazUfLlQiI86fYUCF2wCU",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:7700/indexes/restaurants/documents",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7700",
+									"path": [
+										"indexes",
+										"restaurants",
+										"documents"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "ec529df3-cf9b-4496-b73a-ec7c1d952d18",
+					"description": "Meilisearch Direct and Indirect APIs"
+				},
+				{
+					"name": "ST-Test",
+					"id": "4594591a-9dbd-4df6-8763-4db5a5562f3c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\" : {\r\n    \"description\": \"product_1\",\r\n    \"price\": 101,\r\n    \"category\": \"meat\"\r\n}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "test Login",
+					"id": "f35c52d3-b244-44c0-9331-5ba67c583a43",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "uxDz3URA1x5sBpJmfBAeWPypnrryBxsPSsXmKMYi",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{vhost-admin-guest}}/test_login",
+							"host": [
+								"{{vhost-admin-guest}}"
+							],
+							"path": [
+								"test_login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test LogMe",
+					"id": "70769380-60a5-47d4-92c1-ada303f7fdec",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{online-token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Csrf-Token",
+								"value": "kwaUeSCOb1YfOE1BTYue6xEqVa4Df0hpfdTkKzSo",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:3000",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{online-admin}}/api/test/logme",
+							"host": [
+								"{{online-admin}}"
+							],
+							"path": [
+								"api",
+								"test",
+								"logme"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test CSRF",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9045db52-e6a0-4dac-9d75-4cb8d64d1466",
+								"exec": [
+									"pm.collectionVariables.set(\"local-csrf\", pm.response.json().message);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "39be7692-9858-40ed-af83-f5db4b87c2d1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{local-token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{vhost-admin-api}}/test/getcsrf",
+							"host": [
+								"{{vhost-admin-api}}"
+							],
+							"path": [
+								"test",
+								"getcsrf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test CSRF P",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "39f6fddc-4045-4006-aec4-69b631c3e86e",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "21b6da4a-978b-427d-b25b-4ca36ac5fc7d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{local-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							},
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "{{local-csrf}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{vhost-admin-api}}/test/logme",
+							"host": [
+								"{{vhost-admin-api}}"
+							],
+							"path": [
+								"test",
+								"logme"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "c6053d7c-084c-4ba7-8f1c-7a4b3f8274ef",
+			"description": "For dummy testing with different criterias\n\n1. Requests\n    \n2. Cronjobs\n    \n3. Notifications\n    \n4. Triggers"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "4a8c2bab-9394-4367-84d1-dd77935ac46a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "54c4d467-8fa7-4ca0-9dfe-762c102200bd",
+				"type": "text/javascript",
+				"exec": [
+					"if (pm.response.code === 419){",
+					"    console.log(\"CSRF Mismatch: 419.\")",
+					"    pm.sendRequest({",
+					"            url: pm.collectionVariables.get(\"vhost-admin-api\")+\"/test/getcsrf\",",
+					"            method: 'GET',",
+					"            header: {",
+					"                'Authorization': \"Bearer \" + pm.collectionVariables.get(\"local-token\"),",
+					"            }",
+					"        }, (error, response) => {",
+					"            if (response.code === 200) {",
+					"                pm.collectionVariables.set(\"local-csrf\", response.json().message); ",
+					"                console.log(\"CSRF Refresh Successful.\")       ",
+					"            }",
+					"        });",
+					"} else {",
+					"    // console.log(\"CSRF Health Good.\")",
+					"}"
+				]
+			}
+		}
+	]
+}

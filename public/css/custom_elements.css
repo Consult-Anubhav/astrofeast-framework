@@ -1,0 +1,244 @@
+/* https://www.w3schools.com/about/ */
+
+
+#overlay
+{
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+#overlay_text
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+.spin-big
+{
+    font-size: 50px;
+    height: 50px;
+    width: 50px;
+    margin-top: -25px;
+    margin-left: -25px;
+}
+
+
+.myUL,
+.myUL ul {
+    list-style-type: none;
+}
+
+.myUL {
+    margin: 0;
+    padding: 0;
+}
+
+.myUL ul .caret {
+    -webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none;
+}
+.myUL ul .no-caret {
+    padding-left: 30px;
+}
+.myUL ul .caret label {
+    cursor: pointer;
+}
+.myUL ul .caret label:hover {
+    color: #0d6efd;
+}
+.myUL ul .caret::before {
+    content: "\25B6";
+    color: black;
+    display: inline-block;
+    margin-right: 6px;
+    padding: 0 5px;
+}
+
+.myUL ul .caret-down::before {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari */
+    /*transform: rotate(90 deg);*/
+}
+
+.myUL ul .nested {
+    display: none;
+}
+
+.myUL ul .active {
+    display: block;
+}
+
+
+.pagination
+{
+    display: block;
+}
+
+.pagination li
+{
+    display: inline-block;
+}
+
+.pagination a
+{
+    color: black !important;
+    float: left !important;
+    padding: 8px 16px 9px 16px !important;
+    text-decoration: none !important;
+    border: 1px solid #cbd5e0 !important;
+}
+
+.pagination a.active
+{
+    background-color: #35529b !important;
+    color: white !important;
+    border: 1px solid #35529b !important;
+}
+
+.pagination a:hover:not(.active)
+{
+    background-color: #ddd !important;
+}
+
+.pagination a:first-child
+{
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+}
+
+.pagination a:last-child
+{
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+}
+
+/* https://www.w3schools.com/about/ */
+
+
+/*Start - Stacked table style*/
+@media (max-width: 992px) {
+    .table-sm-stack table, .table-sm-stack tbody {
+        display: contents !important;
+    }
+
+    .table-sm-stack thead {
+        display: none !important;
+    }
+
+    .table-sm-stack table, .table-sm-stack tbody, .table-sm-stack tr {
+        width: 100% !important;
+    }
+
+    .table-sm-stack tr {
+        width: auto !important;
+    }
+
+    .table-sm-stack td {
+        display: inline-block;
+    }
+
+    .table-sm-stack tr {
+        display: block;
+    }
+
+    .table-sm-stack td:before {
+        content: attr(data-title);
+        font-weight: bold;
+    }
+
+    .table-sm-striped tr:nth-child(even) {
+        /*background: rgba(0, 0, 0, 0.05);*/
+        background: #f7f7f7;
+    }
+
+    .table-sm-striped tr:nth-child(odd) {
+        background: white;
+    }
+
+    .table-stack-td-100 td {
+        width: 100% !important;
+    }
+}
+
+.table-stack table, .table-stack tbody {
+    display: contents !important;
+}
+
+.table-stack thead {
+    display: none !important;
+}
+
+.table-stack table, .table-stack tbody, .table-stack tr {
+    width: 100% !important;
+}
+
+.table-stack tr {
+    width: auto !important;
+}
+
+.table-stack td {
+    display: inline-block;
+}
+
+.table-stack tr {
+    display: block;
+}
+
+.table-stack td:before {
+    content: attr(data-title);
+    font-weight: bold;
+}
+
+.table-td-pb-0 td {
+    padding-bottom: 0 !important;
+}
+
+.table-th-py-0 th {
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+}
+
+.table-td-py-0 td {
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+}
+
+.table-th-border-0 th {
+    border: 0 !important;
+
+    box-shadow: inset 0 -0.13px 0 #000000;
+}
+
+
+/* Taxonomies Styles */
+.taxon:hover {
+    background: #f0f2f5;
+    border-radius: 5px;
+}
+
+.taxon .taxon-delete {
+    color: red;
+    margin-left: 5px;
+}
+
+.taxon:not(:hover) .taxon-delete {
+    visibility: hidden;
+}
+
+.taxon:hover .taxon-delete {
+    visibility: visible;
+}

@@ -1,0 +1,187 @@
+
+::-webkit-scrollbar-track {
+    background-color: transparent !important;
+}
+
+::-webkit-scrollbar {
+    height: 6px !important;
+    width: 6px !important;
+    cursor: pointer !important;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px !important;
+    background-color: #aaa !important;
+}
+
+body::-webkit-scrollbar:hover {
+    width: 12px !important;
+}
+
+.navbar {
+    border: 1px solid lightgrey;
+}
+
+.modal {
+    z-index: 10000;
+}
+
+.min-height-vh-100 {
+    min-height: 100vh !important;
+}
+
+.dark-version .navbar {
+    background: transparent linear-gradient(195deg, #323a54, #1a2035) !important;
+    border: 1px solid #323a54;
+}
+
+.fspx-14 {
+    font-size: 14px !important;
+}
+
+.table > tbody > tr > td {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+}
+
+.table-less > tbody > tr > td {
+    padding: 0 !important;
+}
+
+.text-select .option,
+.text-lightgray {
+    color: lightgray;
+}
+
+.text-lightgray option {
+    color: #495057;
+}
+
+label {
+    margin-left: 0 !important;
+}
+
+.icon-delete-style {
+    color: red;
+    border: 1px solid red;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(233, 30, 99, 0.50) !important;
+}
+
+.btn-category:hover {
+    box-shadow: 0 0 0 0.1rem rgba(233, 30, 99, 0.50) !important;
+}
+
+.btn-category:hover i {
+    color: #d63384 !important;
+}
+
+.form-check {
+    padding-left: 0;
+}
+
+.form-check-input[type="radio"],
+.form-check-input[type="checkbox"] {
+    /*margin-top: 0.125rem !important;*/
+}
+
+input.form-control,
+input.form-control[disabled] {
+    padding: 0.25rem 0.5rem;
+    line-height: 1.5 !important;
+}
+
+.form-control,
+.form-select {
+    border: 1px solid #dee2e6 !important;
+}
+
+.form-check-input {
+    margin-right: 10px;
+}
+
+.form-check-label {
+    margin-left: 5px !important;
+}
+
+.form-check:not(.form-switch) .form-check-input {
+    width: 18px !important;
+    height: 18px !important;
+    margin: 0 !important;
+}
+
+textarea.form-control {
+    padding: 8px;
+}
+
+.input-group-append {
+    z-index: 10;
+}
+
+.input-group-text {
+    margin-top: 1px !important;
+    padding: 0.25rem !important;
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
+/* Integrations Styles */
+.test-link {
+    color: blue;
+}
+
+.test-link:focus {
+    color: red;
+}
+
+.test-link:hover {
+    color: #00cc00;
+}
+
+.ui-datepicker {
+    background-color: white;
+    border: 1px solid #dee2e6 !important;
+    border-radius: 10px;
+    z-index: 100;
+}
+
+.ui-datepicker * {
+    padding: 5px;
+}
+
+.z-index-2 {
+    z-index: 0 !important;
+}
+
+.product-variant-image img,
+.product-variant-upload {
+    width: 150px;
+    height: 150px;
+    object-fit: fill;
+    cursor: pointer;
+    user-select: none;
+}
+.product-variant-image,
+.product-variant-upload {
+    border: 1px solid #e6e6e6;
+    user-select: none;
+}
+.product-variant-image img:hover {
+    opacity: 0.5;
+}
+.product-variant-upload:hover i {
+    color: rgba(233, 30, 99, 0.50);
+}
+.product-variant-image:hover,
+.product-variant-upload:hover {
+    background-color: #e6e6e6;
+    border: 1px solid rgba(233, 30, 99, 0.50) !important;
+    box-shadow: 0 0 0 0.1rem rgba(233, 30, 99, 0.50) !important;
+}

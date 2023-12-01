@@ -1,0 +1,454 @@
+{
+	"info": {
+		"_postman_id": "3c2cc4a3-88e1-4712-8ccd-a6942dd681c6",
+		"name": "App APIs - v1.0.0",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "26343523-3c2cc4a3-88e1-4712-8ccd-a6942dd681c6"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login Customer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0319e98c-d76e-45e6-8f0d-283d3b3c8aa7",
+								"exec": [
+									"let res_data = pm.response.json();\r",
+									"pm.environment.set('vhost-customer-csrf',res_data['_token']);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "fc8d8087-d156-42ae-8897-6c853a7c7b6c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{vhost-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test.customer@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "passme",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{vhost-guest}}/v1.0.0/login",
+							"host": [
+								"{{vhost-guest}}"
+							],
+							"path": [
+								"v1.0.0",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Customer",
+					"id": "3fe37b6a-8248-4f80-a43d-6b12b3e5c87d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{vhost-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test.customer@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "passme",
+									"type": "text"
+								},
+								{
+									"key": "firstname",
+									"value": "Test Customer",
+									"type": "text"
+								},
+								{
+									"key": "lastname",
+									"value": "passme",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{vhost-guest}}/v1.0.0/register",
+							"host": [
+								"{{vhost-guest}}"
+							],
+							"path": [
+								"v1.0.0",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout Customer",
+					"id": "fe8fac86-50b0-4baa-9e0d-aadaa79dbe31",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{vhost-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Csrf-Token",
+								"value": "{{vhost-customer-csrf}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{vhost-customer-api}}/v1.0.0/logout",
+							"host": [
+								"{{vhost-customer-api}}"
+							],
+							"path": [
+								"v1.0.0",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "6ac7dc0a-d697-4016-8d97-8d469b6da984",
+			"description": "Customers related APIs ...\n\n1. Auth (login, register, refresh-csrf)"
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Get Cart",
+					"id": "8ad2ab73-75a3-4b7f-8e10-de97c0449867",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{vhost-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Csrf-Token",
+								"value": "{{vhost-customer-csrf}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{vhost-customer-api}}/v1.0.0/cart",
+							"host": [
+								"{{vhost-customer-api}}"
+							],
+							"path": [
+								"v1.0.0",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add to Cart",
+					"id": "7b58208c-176f-4e74-931c-d77219722507",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{vhost-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Csrf-Token",
+								"value": "{{vhost-customer-csrf}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "sku",
+									"value": "PZLBL-036",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{vhost-customer-api}}/v1.0.0/add_to_cart",
+							"host": [
+								"{{vhost-customer-api}}"
+							],
+							"path": [
+								"v1.0.0",
+								"add_to_cart"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "70bc0592-753f-46c3-85ca-9337f173434b",
+			"description": "Customers related APIs ...\n\n1. Cart APIs"
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Update Profile",
+					"id": "a5bdec83-31cf-4e7c-a3e2-aed06b005c0a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{vhost-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Csrf-Token",
+								"value": "{{vhost-customer-csrf}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n        \"email\": \"test.customer@gmail.com\",\r\n        \"phone\": 9876543210,\r\n        \"firstname\": \"Test2\",\r\n        \"lastname\": \"Last2\",\r\n        \"address\": \"123 @local address.\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{vhost-customer-api}}/v1.0.0/update_profile",
+							"host": [
+								"{{vhost-customer-api}}"
+							],
+							"path": [
+								"v1.0.0",
+								"update_profile"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "fecb32a6-2b43-4531-a8ae-88537a80c379"
+		},
+		{
+			"name": "Notifications",
+			"item": [],
+			"id": "ca3c7239-d700-4ce4-88ad-4d8d90315421"
+		},
+		{
+			"name": "Test",
+			"item": [
+				{
+					"name": "Test Cart",
+					"id": "e7bd42d7-a4f6-49e6-bf39-917e573aaab5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{vhost-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Csrf-Token",
+								"value": "{{vhost-customer-csrf}}",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:3000",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "tech@astrofeast.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Astrofeast@2023",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{vhost-test-customer-api}}/v1.0.0/cart",
+							"host": [
+								"{{vhost-test-customer-api}}"
+							],
+							"path": [
+								"v1.0.0",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "c8616da4-ceca-4978-a2f0-0c9be720f757",
+			"description": "Customers Test APIs"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "04612b37-6dad-4a54-a083-89cf4a03f3eb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2fa4d935-cb4c-40d9-85a2-1f837fa7c03f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
